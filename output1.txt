@@ -1,3 +1,0 @@
-Option 0: BM_AUSVM
-Option 1: N/A
-Option 2: N/A

@@ -26,7 +26,7 @@ class Location:
     def __str__(self) -> str:
         return (
             f"Location: {self.code}\n"
-            f"\Coordinate: {self.point}\n"
+            f"\tCoordinate: {self.point}\n"
             f"\tFacilityOwned: {self.facility_owned}"
         )
 
@@ -37,6 +37,6 @@ class Location:
             return NotImplemented
         return self.code is other.code
 
-    def add_trip(self, trip) -> list[Generic[Trip]]:
+    def add_trip(self, trip: Trip) -> list[Generic[Trip]]:
         self.trips.append(trip)
         return self.trips
