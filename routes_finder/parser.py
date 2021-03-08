@@ -12,7 +12,7 @@ def output(count: int, route: Tuple[list, float]) -> str:
 
 
 def write_to_file(filename: str, routes: list[Tuple[list, float]]) -> None:
-    """"""
+    """Write routes to the file as "Option <X>": <Route>"""
     with open(filename, "w") as file:
         [file.write(output(x + 1, route)) for x, route in enumerate(routes)]
 
@@ -20,7 +20,7 @@ def write_to_file(filename: str, routes: list[Tuple[list, float]]) -> None:
 def coalesce_routes(
     routes: list[Tuple[list, float]], max: int
 ) -> list[Tuple[list, float]]:
-    """"""
+    """Coalesce routes list with "N/A" if number requested exceeds actual."""
     size = len(routes)
     # Check if the size of the list is enough for requested max
     if size < max:
@@ -37,7 +37,7 @@ def parse(
     output_file: str,
     results: int,
 ) -> None:
-    """"""
+    """Read CSV files and instruction file to build the graph and traverse."""
     origin = None
     destination = None
     locations = {}

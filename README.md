@@ -6,9 +6,9 @@ The application is Dockerized using Python3.9.2-alpine. A Makefile is provided f
 
 ## Installation
 
-Use our Makefile to assist building the application. Run the command below:
+Use our Makefile to assist building the application. Run the command below (You may need sudo priviledges):
 
-    sudo make build
+    make build
 
 ## Testing
 

@@ -5,7 +5,16 @@ Location = TypeVar("Location")
 
 
 class Trip:
-    """"""
+    """The Edge of the graph.
+
+    Holds the distance attribute representing the Kilometers between the origin
+    and destination GPS coordinates. The vincenty method was removed from the
+    geopy package, so I utilized geodesic method which I believe has the same
+    algorithm to determine distance.
+
+    Weekly capacity is not used but the Priority Queue in the uniform cost
+    search could use that attribute instead.
+    """
 
     def __init__(self, locations: dict[str, Generic[Location]], data: dict) -> None:
         self.route = data["Route"]

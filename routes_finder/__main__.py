@@ -6,7 +6,7 @@ from .parser import parse
 
 
 def usage():
-    """Help documentation"""
+    """Help documentation."""
     print(
         f"\nusage: routes_finder [-v] [-h] [--verbose] [--help] "
         f"[--input=<Input-File>] [--output=<Output-File>] "
@@ -30,7 +30,7 @@ def usage():
 
 
 def main():
-    """"""
+    """Find all routes between two nodes in a unidirectional graph."""
     # Check the user CLI input matches correct syntax
     try:
         # Specify the valid CLI options/arguments
