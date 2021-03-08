@@ -9,6 +9,7 @@ class TestRouteFinder(unittest.TestCase):
         self.locations_file = "data/locations.csv"
         self.trips_file = "data/trips.csv"
         self.results = 3
+        self.outputDir = "tests/output"
         self.input1 = "tests/input/input1.txt"
         self.input2 = "tests/input/input2.txt"
         self.input3 = "tests/input/input3.txt"
@@ -19,6 +20,8 @@ class TestRouteFinder(unittest.TestCase):
         self.output4 = "tests/output/output4.txt"
 
     def setUp(self) -> None:
+        if not os.path.exists(self.outputDir):
+            os.makedirs(self.outputDir)
         if os.path.exists(self.output1):
             os.remove(self.output1)
         if os.path.exists(self.output2):
