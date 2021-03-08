@@ -9,7 +9,12 @@ class RoutesFinder:
     def uniform_cost_search(
         origin: Location, destination: Location
     ) -> list[Tuple[list, int]]:
-        """"""
+        """Uniform cost search on an adjacency graph given origin node.
+
+        The PriorityQueue is ordered by the trip distance (i.e. edge cost)
+        between two nodes. The result will give an the shortest path, followed
+        by the next shortest until no further routes are discovered.
+        """
         routes = []
         frontier = queue.PriorityQueue()  # Declare a Priority Queue
         frontier.put((0, origin, []))  # Initialize the Queue

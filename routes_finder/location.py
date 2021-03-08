@@ -5,7 +5,12 @@ Trip = TypeVar("Trip")
 
 
 class Location:
-    """"""
+    """The Node/Vertex of the graph.
+
+    Contains an adjacency list stored in the `trips` attribute used to build the
+    adjacency graph. Also has a `visited` attribute used in the search to avoid
+    cycles.
+    """
 
     def __init__(self, data: dict) -> None:
         self.code = data["LocationCode"]
