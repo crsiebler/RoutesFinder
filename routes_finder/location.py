@@ -1,7 +1,8 @@
 import geopy
-from typing import Hashable, TypeVar, Generic
+from typing import Hashable, TypeVar, List
 
 Trip = TypeVar("Trip")
+Trips = List[Trip]
 
 
 class Location:
@@ -42,6 +43,6 @@ class Location:
             return NotImplemented
         return self.code is other.code
 
-    def add_trip(self, trip: Trip) -> list[Generic[Trip]]:
+    def add_trip(self, trip: Trip) -> Trips:
         self.trips.append(trip)
         return self.trips
