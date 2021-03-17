@@ -1,5 +1,5 @@
 import queue
-from typing import Tuple, TypeVar
+from typing import Tuple, TypeVar, List
 
 Location = TypeVar("Location")
 
@@ -8,7 +8,7 @@ class RoutesFinder:
     @staticmethod
     def uniform_cost_search(
         origin: Location, destination: Location
-    ) -> list[Tuple[list, int]]:
+    ) -> List[Tuple[list, int]]:
         """Uniform cost search on an adjacency graph given origin node.
 
         The PriorityQueue is ordered by the trip distance (i.e. edge cost)

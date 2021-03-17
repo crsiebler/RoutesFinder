@@ -1,6 +1,6 @@
 import csv
 import logging
-from typing import Tuple
+from typing import Tuple, List
 from .finder import RoutesFinder
 from .location import Location
 from .trip import Trip
@@ -11,15 +11,15 @@ def output(count: int, route: Tuple[list, float]) -> str:
     return f"Option {count}: {', '.join(route[0])}\n"
 
 
-def write_to_file(filename: str, routes: list[Tuple[list, float]]) -> None:
+def write_to_file(filename: str, routes: List[Tuple[list, float]]) -> None:
     """Write routes to the file as "Option <X>": <Route>"""
     with open(filename, "w") as file:
         [file.write(output(x + 1, route)) for x, route in enumerate(routes)]
 
 
 def coalesce_routes(
-    routes: list[Tuple[list, float]], max: int
-) -> list[Tuple[list, float]]:
+    routes: List[Tuple[list, float]], max: int
+) -> List[Tuple[list, float]]:
     """Coalesce routes list with "N/A" if number requested exceeds actual."""
     size = len(routes)
     # Check if the size of the list is enough for requested max

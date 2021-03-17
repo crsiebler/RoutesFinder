@@ -12,3 +12,13 @@ run:
 
 test:
 	docker run -it --rm --name routes_finder -v ${PWD}:/usr/src/app -w /usr/src/app routes_finder python -m tests
+
+coverage:
+	docker run -it --rm --name routes_finder -v ${PWD}:/usr/src/app -w /usr/src/app routes_finder coverage run -m tests	
+
+coverage-report:
+	docker run -it --rm --name routes_finder -v ${PWD}:/usr/src/app -w /usr/src/app routes_finder coverage report
+
+coverage-html:
+	docker run -it --rm --name routes_finder -v ${PWD}:/usr/src/app -w /usr/src/app routes_finder coverage html
+	wslview htmlcov/index.html

@@ -1,4 +1,4 @@
-from typing import TypeVar, Generic
+from typing import TypeVar, Dict
 from geopy.distance import geodesic
 
 Location = TypeVar("Location")
@@ -16,7 +16,7 @@ class Trip:
     search could use that attribute instead.
     """
 
-    def __init__(self, locations: dict[str, Generic[Location]], data: dict) -> None:
+    def __init__(self, locations: Dict[str, Location], data: dict) -> None:
         self.route = data["Route"]
         self.origin = locations.get(data["Origin"])
         self.destination = locations.get(data["Destination"])
