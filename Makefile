@@ -1,5 +1,6 @@
 build:
 	docker build -t routes_finder .
+	mkdir -p tests/output
 
 help:
 	docker run -it --rm --name routes_finder -v ${PWD}:/usr/src/app -w /usr/src/app routes_finder python -m routes_finder -h
